@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:hint="Nama item"/>
 
     <EditText
@@ -21,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/etItem"
-        app:layout_constraintStart_toStartOf="id/etItem"
         android:hint="Jumlah item"/>
 
     <Button
@@ -29,15 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tambah"
-        app:layout_constraintTop_toBottomOf="@id/etJumlah"
-        app:layout_constraintStart_toStartOf="@id/etJumlah"/>
+        app:layout_constraintTop_toBottomOf="@id/etJumlah"/>
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Update"
-        app:layout_constraintTop_toBottomOf="@id/btnTambah"
-        app:layout_constraintStart_toStartOf="@id/btnTambah"/>
+        app:layout_constraintTop_toBottomOf="@id/btnTambah"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
