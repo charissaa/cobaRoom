@@ -20,10 +20,9 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
+    //global variable
     private lateinit var DB : daftarBelanjaDB
-
     private lateinit var adapterDaftar: adapterDaftar
-
     private var arDaftar: MutableList<daftarBelanja> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,17 +35,23 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        //inisialisasi DB
         DB = daftarBelanjaDB.getDatabase(this)
 
+        //inisialisasi view
         var _fabAdd = findViewById<FloatingActionButton>(R.id.fabAdd)
         _fabAdd.setOnClickListener {
             startActivity(Intent(this, TambahDaftar::class.java))
         }
-
         adapterDaftar = adapterDaftar(arDaftar)
-        var _rvDaftar = findViewById<RecyclerView>(R.id.rvNotes)
+        var _rvDaftar = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.rvNotes)
         _rvDaftar.layoutManager = LinearLayoutManager(this)
         _rvDaftar.adapter = adapterDaftar
+
+        // event click listener
+        _fabAdd.setOnClickListener {
+            startActivity(Intent(this, TambahDaftar::class.java))
+        }
 
         adapterDaftar.setOnItemClickCallBack(
             object : adapterDaftar.OnItemClickCallBack {
