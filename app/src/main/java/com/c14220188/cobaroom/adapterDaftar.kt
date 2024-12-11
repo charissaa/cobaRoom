@@ -33,6 +33,7 @@ class adapterDaftar (private val daftarBelanja: MutableList<daftarBelanja>) :
 
         var _btnEdit = itemView .findViewById<TextView>(R.id.btnEdit)
         var _btnDelete = itemView .findViewById<TextView>(R.id.btnDelete)
+        var _btnDone = itemView.findViewById<TextView>(R.id.btnDone)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): adapterDaftar.ListViewHolder {
@@ -62,6 +63,10 @@ class adapterDaftar (private val daftarBelanja: MutableList<daftarBelanja>) :
 
         holder._btnDelete.setOnClickListener {
             onItemClickCallBack.delData(daftar)
+        }
+
+        holder._btnDone.setOnClickListener {
+
         }
     }
 

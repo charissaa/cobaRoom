@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
         DB = daftarBelanjaDB.getDatabase(this)
 
         //inisialisasi view
+        var _btnHistory = findViewById<Button>(R.id.btnHistory)
+        _btnHistory.setOnClickListener {
+            startActivity(Intent(this, History::class.java))
+        }
         var _fabAdd = findViewById<FloatingActionButton>(R.id.fabAdd)
         _fabAdd.setOnClickListener {
             startActivity(Intent(this, TambahDaftar::class.java))
