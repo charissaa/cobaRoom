@@ -20,6 +20,7 @@ class adapterDaftar (private val daftarBelanja: MutableList<daftarBelanja>) :
 
     interface OnItemClickCallBack {
         fun delData(dtBelanja: daftarBelanja)
+        fun statusData(dtBelanja: daftarBelanja)
     }
 
     fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack) {
@@ -66,7 +67,7 @@ class adapterDaftar (private val daftarBelanja: MutableList<daftarBelanja>) :
         }
 
         holder._btnDone.setOnClickListener {
-
+            onItemClickCallBack.statusData(daftar)
         }
     }
 
